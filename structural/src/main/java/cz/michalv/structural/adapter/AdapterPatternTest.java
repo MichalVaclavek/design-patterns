@@ -33,10 +33,10 @@ public class AdapterPatternTest {
     }
 
     private static Voltage getVoltage(SocketAdapter sockAdapter, int i) {
-        switch (i){
-            case 3: return sockAdapter.get3Volts();
-            case 12: return sockAdapter.get12Volts();
-            default: return sockAdapter.get120Volts();
-        }
+        return switch (i) {
+            case 3 -> sockAdapter.get3Volts();
+            case 12 -> sockAdapter.get12Volts();
+            default -> sockAdapter.get120Volts();
+        };
     }
 }
