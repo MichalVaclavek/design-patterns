@@ -2,8 +2,10 @@ package cz.michalv.structural.adapter;
 
 import lombok.extern.slf4j.Slf4j;
 
-// https://www.digitalocean.com/community/tutorials/adapter-design-pattern-java
-
+/**
+ * https://www.digitalocean.com/community/tutorials/adapter-design-pattern-java
+ *
+ */
 @Slf4j
 public class AdapterPatternTest {
 
