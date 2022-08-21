@@ -1,4 +1,4 @@
-package cz.michalv.structural.bridge;
+package cz.michalv.structural.composite;
 
 public class TestCompositePattern {
 

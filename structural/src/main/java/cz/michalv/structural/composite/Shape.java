@@ -1,4 +1,4 @@
-package cz.michalv.structural.bridge;
+package cz.michalv.structural.composite;
 
 /**
  * Composite pattern base component defines the common methods for leaf and composites.
