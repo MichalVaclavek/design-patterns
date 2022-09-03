@@ -4,42 +4,34 @@ import java.sql.Connection;
 
 public class HelperFacade {
 
-    public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName){
+    public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName) {
         Connection con = null;
-        switch (dbType){
-            case MYSQL:
+        switch (dbType) {
+            case MYSQL -> {
                 con = MySqlHelper.getMySqlDBConnection();
                 MySqlHelper mySqlHelper = new MySqlHelper();
-                switch(reportType){
-                    case HTML:
-                        mySqlHelper.generateMySqlHTMLReport(tableName, con);
-                        break;
-                    case PDF:
-                        mySqlHelper.generateMySqlPDFReport(tableName, con);
-                        break;
+                switch (reportType) {
+                    case HTML -> mySqlHelper.generateMySqlHTMLReport(tableName, con);
+                    case PDF -> mySqlHelper.generateMySqlPDFReport(tableName, con);
                 }
-                break;
-            case ORACLE:
+            }
+            case ORACLE -> {
                 con = OracleHelper.getOracleDBConnection();
                 OracleHelper oracleHelper = new OracleHelper();
-                switch(reportType){
-                    case HTML:
-                        oracleHelper.generateOracleHTMLReport(tableName, con);
-                        break;
-                    case PDF:
-                        oracleHelper.generateOraclePDFReport(tableName, con);
-                        break;
+                switch (reportType) {
+                    case HTML -> oracleHelper.generateOracleHTMLReport(tableName, con);
+                    case PDF -> oracleHelper.generateOraclePDFReport(tableName, con);
                 }
-                break;
+            }
         }
 
     }
 
-    public enum DBTypes{
+    public enum DBTypes {
         MYSQL,ORACLE;
     }
 
-    public enum ReportTypes{
+    public enum ReportTypes {
         HTML,PDF;
     }
 }
