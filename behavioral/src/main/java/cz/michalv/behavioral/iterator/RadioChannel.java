@@ -9,7 +9,7 @@ public class RadioChannel {
     private double frequency;
     private ChannelTypeEnum TYPE;
 
-    public RadioChannel(double freq, ChannelTypeEnum type){
+    public RadioChannel(double freq, ChannelTypeEnum type) {
         this.frequency=freq;
         this.TYPE=type;
     }
@@ -24,6 +24,6 @@ public class RadioChannel {
 
     @Override
     public String toString(){
-        return "Frequency="+this.frequency+", Type="+this.TYPE;
+        return "Frequency=" + this.frequency + ", Type=" + this.TYPE;
     }
 }

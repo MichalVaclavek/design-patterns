@@ -9,16 +9,18 @@ import java.util.List;
  */
 public class ChannelCollectionImpl implements ChannelCollection {
 
-    private List<RadioChannel> channelsList;
+    private final List<RadioChannel> channelsList;
 
     public ChannelCollectionImpl() {
         channelsList = new ArrayList<>();
     }
 
+    @Override
     public void addChannel(RadioChannel c) {
         this.channelsList.add(c);
     }
 
+    @Override
     public void removeChannel(RadioChannel c) {
         this.channelsList.remove(c);
     }
@@ -34,8 +36,7 @@ public class ChannelCollectionImpl implements ChannelCollection {
         private List<RadioChannel> radioChannels;
         private int position;
 
-        public ChannelIteratorImpl(ChannelTypeEnum ty,
-                                   List<RadioChannel> channelsList) {
+        public ChannelIteratorImpl(ChannelTypeEnum ty, List<RadioChannel> channelsList) {
             this.type = ty;
             this.radioChannels = channelsList;
         }
@@ -58,6 +59,6 @@ public class ChannelCollectionImpl implements ChannelCollection {
             position++;
             return c;
         }
-
     }
+
 }

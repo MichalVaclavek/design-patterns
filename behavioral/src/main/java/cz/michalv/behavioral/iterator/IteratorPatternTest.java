@@ -1,9 +1,12 @@
 package cz.michalv.behavioral.iterator;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Iterator pattern is useful when you want to provide a standard way to iterate over a collection and hide the implementation logic from client program.
  * The logic for iteration is embedded in the collection itself and it helps client program to iterate over them easily.
  */
+@Slf4j
 public class IteratorPatternTest {
 
     public static void main(String[] args) {
@@ -11,14 +14,14 @@ public class IteratorPatternTest {
         ChannelIterator baseIterator = channels.iterator(ChannelTypeEnum.ALL);
         while (baseIterator.hasNext()) {
             RadioChannel c = baseIterator.next();
-            System.out.println(c.toString());
+            log.info(c.toString());
         }
-        System.out.println("******");
+        log.info("******");
         // RadioChannel Type Iterator
         ChannelIterator englishIterator = channels.iterator(ChannelTypeEnum.ENGLISH);
         while (englishIterator.hasNext()) {
             RadioChannel c = englishIterator.next();
-            System.out.println(c.toString());
+            log.info(c.toString());
         }
     }
 

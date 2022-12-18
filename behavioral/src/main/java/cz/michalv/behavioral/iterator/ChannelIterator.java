@@ -2,7 +2,7 @@ package cz.michalv.behavioral.iterator;
 
 public interface ChannelIterator {
 
-    public boolean hasNext();
+    boolean hasNext();
 
-    public RadioChannel next();
+    RadioChannel next();
 }
