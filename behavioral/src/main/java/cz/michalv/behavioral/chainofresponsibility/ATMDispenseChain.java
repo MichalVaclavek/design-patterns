@@ -40,7 +40,5 @@ public class ATMDispenseChain {
             // process the request
             atmDispenser.c1.dispense(new Currency(amount));
         }
-
     }
-
 }
