@@ -13,13 +13,13 @@ import java.util.List;
 @Slf4j
 public class MyTopic implements Subject {
 
-    private List<Observer> observers;
+    private final List<Observer> observers;
     private String message;
     private boolean changed;
-    private final Object MUTEX= new Object();
+    private final Object MUTEX = new Object();
 
     public MyTopic() {
-        this.observers=new ArrayList<>();
+        this.observers = new ArrayList<>();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class MyTopic implements Subject {
 
     //method to post message to the topic
     public void postMessage(String msg) {
-        log.info("Message Posted to Topic:" + msg);
+        log.info("Message Posted to Topic: " + msg);
         this.message = msg;
         this.changed = true;
         notifyObservers();
