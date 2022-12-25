@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyTopicSubscriber implements Observer {
 
-    private String name;
+    private final String name;
     private Subject topic;
 
     public MyTopicSubscriber(String nm) {

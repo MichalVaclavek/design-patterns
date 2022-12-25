@@ -48,8 +48,8 @@ public class MyTopic implements Subject {
             observersLocal = new ArrayList<>(this.observers);
             this.changed = false;
         }
-        for (Observer obj : observersLocal) {
-            obj.update();
+        for (Observer observer : observersLocal) {
+            observer.update();
         }
     }
 
